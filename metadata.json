@@ -1,0 +1,5 @@
+{
+  "name": "React Issue Tracker",
+  "description": "A modern, client-side issue tracker application built with React, TypeScript, and TailwindCSS. It allows users to create, view, update, filter, sort, and search for issues.",
+  "requestFramePermissions": []
+}
