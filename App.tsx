@@ -3,8 +3,10 @@ import React from 'react';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { IssueListPage } from './pages/IssueListPage';
 import { IssueDetailPage } from './pages/IssueDetailPage';
+import { usePerformance } from './hooks/usePerformance';
 
 function App() {
+  usePerformance();
   return (
     <HashRouter>
       <div className="min-h-screen text-gray-800 dark:text-gray-200">

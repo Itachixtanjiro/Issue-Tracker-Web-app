@@ -3,6 +3,8 @@ import React from 'react';
 import { Issue, IssueSort } from '../types';
 import { Badge } from './common/Badge';
 import { SortIcon } from './common/Icons';
+import { IssueSkeleton } from './IssueSkeleton';
+
 
 interface IssueTableProps {
   issues: Issue[];
@@ -19,6 +21,9 @@ const TableHeader: React.FC<{
   onSort: (field: keyof Issue) => void;
 }> = ({ field, label, sort, onSort }) => {
   const isSorted = sort.field === field;
+  const IssueTable: React.FC<Props> = ({ issues, loading, ...props }) => {
+  if (loading) return <IssueSkeleton />;
+
   return (
     <th
       className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700"
